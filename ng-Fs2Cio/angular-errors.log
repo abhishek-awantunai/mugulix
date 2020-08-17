@@ -1,0 +1,8 @@
+[error] Error: [91merror[0m[90m TS5023: [0mUnknown compiler option 'enableIvy'.
+
+    at Object.readTsconfig (/home/abhishek/Desktop/mugulix/node_modules/@angular-devkit/build-angular/src/angular-cli-files/utilities/read-tsconfig.js:27:15)
+    at Object.configureI18nBuild (/home/abhishek/Desktop/mugulix/node_modules/@angular-devkit/build-angular/src/utils/i18n-options.js:97:38)
+    at Object.generateI18nBrowserWebpackConfigFromContext (/home/abhishek/Desktop/mugulix/node_modules/@angular-devkit/build-angular/src/utils/webpack-browser-config.js:85:57)
+    at Object.buildBrowserWebpackConfigFromContext (/home/abhishek/Desktop/mugulix/node_modules/@angular-devkit/build-angular/src/browser/index.js:67:41)
+    at setup (/home/abhishek/Desktop/mugulix/node_modules/@angular-devkit/build-angular/src/dev-server/index.js:103:63)
+

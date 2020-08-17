@@ -1,0 +1,128 @@
+<div class="container-fluid product-list">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-3">
+            <select class="form-control" [(ngModel)]="category" (change)="categorySelected()">
+              <option selected value="-1">All</option>
+              <ng-container *ngFor="let category of categoryList; let i = index;">
+                <option *ngIf="category?.subcategory_list?.length > 0" [value]="i">
+                  {{ category?.category_name }}
+                </option>
+              </ng-container>
+            </select>
+          </div>
+          <ng-container *ngIf="category > -1">
+            <div class="col-sm-3">
+              <select class="form-control" [(ngModel)]="subcategory">
+                <option selected value="-1">Select a subcategory</option>
+                <ng-container *ngFor="let subcategory of categoryList[category]?.subcategory_list; let i = index;">
+                  <option [value]="i">
+                    {{ subcategory?.subcategory }}
+                  </option>
+                </ng-container>
+              </select>
+            </div>
+          </ng-container>
+          <div class="col-sm-3" *ngIf="category > -1 && subcategory > -1">
+            <button class="btn btn__blue" (click)="filterProductData()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-container *ngIf="productList?.length > 0">
+      <div class="col-sm-3 mar-tb-15" *ngFor="let product of productList; let i = index">
+        <div class="product-block">
+          <!-- <img src="https://d2211byn0pk9fi.cloudfront.net/spree/activities/62410/image/large/Free.jpg?1557402752" /> -->
+          <img [src]="product?.image_url" />
+          <p class="name">{{product?.name}}</p>
+          <p class="brand">{{product?.brand}} | {{product?.category}} | {{product?.sub_category}}</p>
+          <p class="specification">Specification : {{ product?.specification }}</p>
+          <p class="price">Price : {{ product?.price }} | Quantity : {{ product?.quantity }}</p>
+          <i class="fa fa-pencil add_icon" aria-hidden="true" (click)="openModal(addeditProduct, i)"></i>
+          <i class="fa fa-trash delete_icon" aria-hidden="true" (click)="openModal(deleteProduct, i)"></i>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="productList?.length === 0">
+      <div class="col-sm-12 mar-tb-15 text-center">
+        <img class="inline-block mar-tb-15"
+          src="https://static.dribbble.com/users/721524/screenshots/4117132/untitled-1-_1__1x.png" />
+      </div>
+    </ng-container>
+
+  </div>
+  <i class="fa fa-plus fixed-plus" aria-hidden="true" (click)="openModal(addeditProduct)"></i>
+</div>
+
+<div #editProduct></div>
+
+<ng-template #deleteProduct>
+  <div class=" modal-header text-center">
+    <h4 class=" modal-title pull-left f-size-18">Are you Sure you want to delete
+      {{ productList[selectedProductIndex]?.name }}?</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-center">
+    <button class="btn btn__blue mar-lr-15" (click)="deleteProductHandler()">yes</button>
+    <button class="btn btn__grey" (click)="modalRef.hide()">No</button>
+  </div>
+</ng-template>
+
+<ng-template #addeditProduct>
+  <div class=" modal-header text-center">
+    <h4 class=" modal-title pull-left f-size-18">Product</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-center">
+    <form #productForm="ngForm">
+      <div class="form-group">
+        <input class="form-control" type="text" name="name" [(ngModel)]="selectedProduct.name" required
+          placeholder="Enter name" />
+      </div>
+      <div class="form-group">
+        <select class="form-control" name="category" [(ngModel)]="selectedProduct.categoryId" required
+          (change)="updateSubcat()">
+          <option value="-1" selected disabled>Select a category</option>
+          <ng-container *ngFor="let category of categoryList;let i = index;">
+            <option *ngIf="category?.subcategory_list?.length > 0" [value]="i">{{ category?.category_name }}
+            </option>
+          </ng-container>
+
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control" name="sub_category" [(ngModel)]="selectedProduct.sub_categoryId" required>
+          <option value="0" selected disabled>Select a subcategory</option>
+          <option *ngFor="let subcategory of categoryList[productForm?.value?.category]?.subcategory_list;"
+            [value]="subcategory?.id">
+            {{ subcategory?.subcategory }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="brand" [(ngModel)]="selectedProduct.brand" required
+          placeholder="Enter brand" />
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="number" name="price" [(ngModel)]="selectedProduct.price" required
+          placeholder="Enter price" />
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="number" name="quantity" [(ngModel)]="selectedProduct.quantity" required
+          placeholder="Enter quantity" />
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" type="text" name="specification" [(ngModel)]="selectedProduct.specification"
+          required rows="5" placeholder="Enter Specification"></textarea>
+      </div>
+      <button [disabled]="!productForm?.valid || selectedProduct?.sub_categoryId === '0'"
+        class="btn btn__blue mar-lr-15" (click)="addProduct(productForm?.value)"> yes</button>
+      <button class="btn btn__grey" (click)="modalRef.hide()">No</button>
+    </form>
+  </div>
+</ng-template>

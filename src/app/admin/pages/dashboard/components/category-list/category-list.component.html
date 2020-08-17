@@ -1,0 +1,82 @@
+<div class="container-fluid category-list">
+  <div class="row">
+    <div class="col-sm-3 mar-tb-15" *ngFor="let category of categoryList; let i = index;">
+      <div class="category-card">
+        <h3 class="f-size-24">
+          {{ category?.category_name }}
+        </h3>
+        <ng-container *ngIf="category?.subcategory_list?.length > 0">
+          <ul>
+            <ng-container *ngFor="let subcategory of category?.subcategory_list; let j = index;">
+              <li>{{subcategory?.subcategory}}</li>
+            </ng-container>
+          </ul>
+        </ng-container>
+        <ng-container *ngIf="category?.subcategory_list?.length === 0">
+          <p class="mar-tb-15">No Subcategories present add one</p>
+        </ng-container>
+        <i class="fa fa-plus-circle add_icon" aria-hidden="true" (click)="openModal(editCategory, i)"></i>
+        <i class="fa fa-trash delete_icon" aria-hidden="true" (click)="openModal(deleteCategory, i)"></i>
+
+      </div>
+    </div>
+  </div>
+  <i class="fa fa-plus fixed-plus" aria-hidden="true" (click)="openModal(addCategory)"></i>
+</div>
+
+
+
+<ng-template #deleteCategory>
+  <div class=" modal-header text-center">
+    <h4 class=" modal-title pull-left f-size-18">Are you Sure you want to delete
+      {{ categoryList[selectedCategoryIndex]?.category_name }}?</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-center">
+    <button class="btn btn__blue mar-lr-15" (click)="deleteCategoryHandler()">yes</button>
+    <button class="btn btn__grey" (click)="modalRef.hide()">No</button>
+  </div>
+</ng-template>
+
+
+<ng-template #editCategory>
+  <div class="modal-header text-center">
+    <h4 class=" modal-title pull-left f-size-18">Are you Sure to add this new subcategory to
+      {{ categoryList[selectedCategoryIndex]?.category_name }}?</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-center">
+    <form #subcategoryForm="ngForm">
+      <div class="form-group">
+        <input class="form-control" type="text" name="subcategory_name" ngModel required />
+      </div>
+      <button [disabled]="!subcategoryForm?.valid" class="btn btn__blue mar-lr-15"
+        (click)="addSubcategory(subcategoryForm?.value)">yes</button>
+      <button class="btn btn__grey" (click)="modalRef.hide()">No</button>
+    </form>
+  </div>
+</ng-template>
+
+
+<ng-template #addCategory>
+  <div class="modal-header text-center">
+    <h4 class=" modal-title pull-left f-size-18">Are you Sure you want to add a new category?</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-center">
+    <form #categoryForm="ngForm">
+      <div class="form-group">
+        <input class="form-control" type="text" name="category_name" ngModel required />
+      </div>
+      <button [disabled]="!categoryForm?.valid" class="btn btn__blue mar-lr-15"
+        (click)="addNewcategory(categoryForm?.value)">yes</button>
+      <button class="btn btn__grey" (click)="modalRef.hide()">No</button>
+    </form>
+  </div>
+</ng-template>
