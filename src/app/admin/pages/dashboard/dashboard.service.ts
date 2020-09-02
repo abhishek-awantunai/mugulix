@@ -29,16 +29,22 @@ export class DashboardService {
   }
 
   // Product API calls
-  getProductList(filterData?) {
+  getProductList(page: number, limit: number, filterData?: any) {
     let url = CONFIG.BASE_URL + CONFIG.API.DASHBOARD.PRODUCT_LIST;
     if (filterData) {
       let i = 0;
       for (const key in filterData) {
         if (filterData.hasOwnProperty(key)) {
-          url += i === 0 ? '?' : '&' + key + '=' + filterData[key];
+          url +=
+            i === 0
+              ? '?' + key + '=' + filterData[key]
+              : '&' + key + '=' + filterData[key];
           i++;
         }
       }
+      url += `&page=${page}&limit=${limit}`;
+    } else {
+      url += `?page=${page}&limit=${limit}`;
     }
 
     return this._dataService.get(url);

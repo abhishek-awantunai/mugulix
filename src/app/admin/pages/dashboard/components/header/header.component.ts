@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../dashboard.service';
 import { CommonService } from '../../../../../shared/services/commonService';
 import { ToastrService } from 'ngx-toastr';
+import { CONFIG } from 'src/app/configs/js/base.url';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +10,10 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  public CONFIG = CONFIG;
   constructor(
     private _dashboardService: DashboardService,
-    private _commonService: CommonService,
+    public _commonService: CommonService,
     private _toastrService: ToastrService
   ) {}
 

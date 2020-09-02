@@ -131,3 +131,37 @@
     border-radius: 50%;
   }
 }
+
+.pagination {
+  width: 100%;
+  margin: 15px 0 15px 0px;
+  overflow: hidden;
+  .container {
+    width: 100%;
+    text-align: center;
+    ul {
+      list-style-type: none;
+      margin: 5px auto;
+      padding: 0px;
+      background: white;
+      display: inline-block;
+      li {
+        display: inline-block;
+        padding: 8px 15px;
+        cursor: pointer;
+        &.active {
+          border: 1px solid #d0d0d0;
+          pointer-events: none;
+          border-radius: 0.5rem;
+          background-color: #3e3c89;
+          color: white !important;
+          border-radius: 50%;
+        }
+        &.disabled {
+          pointer-events: none;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}

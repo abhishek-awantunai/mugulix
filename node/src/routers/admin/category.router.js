@@ -1,7 +1,9 @@
 const express = require("express");
-const router = new express.Router();
 const auth = require("./../../middlewares/auth");
 const Category = require("./../../models/admin/category");
+const logger = require("./../../config/logger");
+
+const router = new express.Router();
 
 router.post("/add", auth, async (req, res) => {
   try {
@@ -32,7 +34,7 @@ router.post("/add", auth, async (req, res) => {
   }
 });
 
-router.get("/list", async (req, res) => {
+router.get("/list", auth, async (req, res) => {
   try {
     const categories = await Category.find();
     res.send({ status: true, data: categories });
@@ -41,7 +43,7 @@ router.get("/list", async (req, res) => {
   }
 });
 
-router.post("/add-subcategory", async (req, res) => {
+router.post("/add-subcategory", auth, async (req, res) => {
   try {
     const category_id = req.body.id;
     const subcategory_name = req.body.subcategory_name;
@@ -76,7 +78,7 @@ router.post("/add-subcategory", async (req, res) => {
   }
 });
 
-router.post("/delete", async (req, res) => {
+router.post("/delete", auth, async (req, res) => {
   try {
     const id = req.body.id;
     if (!id) {

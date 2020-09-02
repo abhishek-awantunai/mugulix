@@ -1,4 +1,3 @@
-require("./../../db/connection");
 const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
@@ -37,6 +36,9 @@ const userSchema = new mongoose.Schema(
       trim: true,
       minlength: 8,
     },
+    avatar: {
+      type: Buffer,
+    },
     role: {
       type: Number,
       trim: true,
@@ -66,7 +68,9 @@ userSchema.methods.toJSON = function () {
   const userObj = user.toObject();
 
   userObj.name = user.f_name + " " + userObj.l_name;
+  userObj.image = '/moglix/user/image/' + user._id;
 
+  delete userObj.avatar;
   delete userObj.f_name;
   delete userObj.l_name;
   delete userObj.password;

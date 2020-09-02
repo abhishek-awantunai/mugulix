@@ -45,11 +45,13 @@ export class ProductListComponent implements OnInit {
   }
 
   filterProductData() {
+    const category = this.categoryList[this.category].id;
+    const sub_category = this.categoryList[this.category].subcategory_list[
+      this.subcategory
+    ].id;
     const filterData = {
-      category: this.categoryList[this.category].id,
-      sub_category: this.categoryList[this.category].subcategory_list[
-        this.subcategory
-      ].id,
+      category,
+      sub_category,
     };
     this.getProductList(filterData);
   }
@@ -89,18 +91,48 @@ export class ProductListComponent implements OnInit {
     this.getCategoryist();
   }
 
+  currentPage: number = 1;
+  paginationArray: Array<Boolean>;
+  showPagination: Boolean = false;
+  createPagination(data) {
+    this.showPagination = data['next'] > 1 || data['prev'] > 2;
+    if (this.showPagination) {
+      this.currentPage = data['next'] - 1 || data['prev'] + 1;
+      this.paginationArray = new Array(data['count']).fill(false);
+      this.currentPage > 0
+        ? (this.paginationArray[this.currentPage - 1] = true)
+        : (this.paginationArray[0] = true);
+    }
+  }
+
+  updatePage(page) {
+    if (page === 'prev') {
+      this.page = this.currentPage + 1;
+    } else if (page === 'next') {
+      this.page = this.currentPage + 1;
+    } else {
+      this.page = page;
+    }
+    this.getProductList();
+  }
+
+  page: number = 1;
+  limit: number = 16;
   getProductList(filterData?: any) {
     this._commonService.showloader();
-    this._dashboardService.getProductList(filterData).subscribe(
-      (res) => {
-        this.productList = res.data;
-        this._commonService.hideloader();
-      },
-      (err) => {
-        this._toastrService.error(err.error.message, 'Error');
-        this._commonService.hideloader();
-      }
-    );
+    this._dashboardService
+      .getProductList(this.page, this.limit, filterData)
+      .subscribe(
+        (res) => {
+          this.productList = res.data.results;
+          this.createPagination(res.data);
+          this._commonService.hideloader();
+        },
+        (err) => {
+          this._toastrService.error(err.error.message, 'Error');
+          this._commonService.hideloader();
+        }
+      );
   }
 
   getCategoryist() {

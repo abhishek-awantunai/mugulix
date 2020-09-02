@@ -1,6 +1,6 @@
 export const CONFIG = {
-  BASE_URL: 'http://192.168.0.110:4242/api',
-  // BASE_URL: 'http://localhost:4242/api',
+  // BASE_URL: 'http://192.168.0.110:4242/api',
+  BASE_URL: 'http://localhost:4242/api',
   API: {
     AUTH: {
       LOGIN: '/admin/login',

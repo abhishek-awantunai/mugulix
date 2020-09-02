@@ -17,6 +17,8 @@
         <a class="nav-link">Category List <span class="sr-only">(current)</span></a>
       </li>
     </ul>
+    <span>{{_commonService?.user?.name}}</span>
+    <img class="profile_pic" [attr.src]="CONFIG.BASE_URL + _commonService?.user?.image" />
     <button class="btn btn__blue my-2 my-sm-0" (click)="logoutUser()">
       <i class="fa fa-sign-out" aria-hidden="true"></i> logout
     </button>

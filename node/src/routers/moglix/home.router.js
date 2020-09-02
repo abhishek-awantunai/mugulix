@@ -1,35 +1,40 @@
 const express = require("express");
-const router = express.Router();
 const auth = require("./../../middlewares/auth");
 const Product = require("./../../models/admin/product");
 const Category = require("./../../models/admin/category");
 const Home = require("./../../models/moglix/home.model");
+const logger = require("./../../config/logger");
+
+const router = express.Router();
 
 router.get("/get-product-list", auth, async (req, res) => {
   try {
-    const home = await Home.find();
-    let category_list = home[0]["categoryList"].filter((item, pos) => {
-      return home[0]["categoryList"].indexOf(item) == pos;
-    });
+    const home = await Home.find().lean();
+
+    // Extract the category list
+    let category_list = [...home[0]["categoryList"]];
 
     let carausal_data = JSON.parse(JSON.stringify(home[0]));
     let cdata = {};
-    cdata.flyer = [];
-    cdata.advertisement = [];
-    cdata.coupon = carausal_data.coupon;
+    cdata["flyer"] = [];
+    cdata["advertisement"] = [];
+    cdata["coupon"] = carausal_data.coupon;
+
+    // Create carausel and caption data
     for (let i = 1; i < 6; i++) {
       const obj = {
         img_url: carausal_data["image" + i],
         caption: carausal_data["caption" + i],
       };
-      cdata.flyer.push(obj);
+      cdata["flyer"].push(obj);
     }
 
+    // Create advertisement data
     for (let i = 1; i < 4; i++) {
       const obj = {
         img_url: carausal_data["advImg" + i],
       };
-      cdata.advertisement.push(obj);
+      cdata["advertisement"].push(obj);
     }
 
     if (
@@ -38,21 +43,24 @@ router.get("/get-product-list", auth, async (req, res) => {
       throw new Error("Need atleas one category to fetch products");
     }
 
-    $or = [];
-    category_list.forEach((category) => {
+    let $or = [];
+    category_list.forEach((category, iii) => {
       $or.push({ category });
     });
 
-    const cateogries = await Category.find();
-    let products = await Product.find({ $or });
+    // Get categories list
+    const cateogries = await Category.find().lean();
+
+    let products = await Product.find({ $or }).lean().limit(75);
 
     const product_array = [];
 
-    category_list.forEach((category) => {
+    category_list.forEach((category, iii) => {
       const data = {};
-      const current_category = cateogries.find(
-        (categ) => categ.id === category
-      );
+      const current_category = cateogries.filter((categ) => {
+        return categ._id == category;
+      })[0];
+
       data["name"] = current_category["category_name"];
       data["id"] = current_category["id"];
       data["products"] = products.filter(
@@ -60,8 +68,10 @@ router.get("/get-product-list", auth, async (req, res) => {
       );
       data["products"].forEach((product) => {
         product.category = data["name"];
-        product.sub_category = current_category.subcategory_list.find(
-          (sub) => sub.id === product.sub_category
+        product.sub_category = current_category.subcategory_list.filter(
+          (sub) => {
+            return sub.id === product.sub_category;
+          }
         )["subcategory"];
       });
       product_array.push(data);
@@ -72,6 +82,7 @@ router.get("/get-product-list", auth, async (req, res) => {
       data: { banner_data: cdata, category_data: product_array },
     });
   } catch (err) {
+    logger.error(err);
     res.status(400).send({ status: false, error: err.message });
   }
 });
@@ -101,6 +112,7 @@ router.post("/update-home-data", auth, async (req, res) => {
 
     res.send({ status: true, data: home[0] });
   } catch (err) {
+    logger.error(err);
     res.status(400).send({ status: false, error: err.message });
   }
 });

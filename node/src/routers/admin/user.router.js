@@ -1,7 +1,62 @@
 const express = require("express");
-const router = new express.Router();
 const auth = require("./../../middlewares/auth");
 const User = require("./../../models/admin/user");
+const logger = require("./../../config/logger");
+const errorFromMiddleware = require("./../../middlewares/error");
+const router = new express.Router();
+const multer = require("multer");
+const upload = multer({
+  // dest: "node/images/",
+  limits: {
+    fileSize: 1000000,
+  },
+  fileFilter(req, file, cb) {
+    if (
+      file.originalname.endsWith(".jpg") ||
+      file.originalname.endsWith(".png")
+    ) {
+      cb(undefined, true);
+    } else {
+      return cb(new Error("Please updload a jpg / png file"));
+    }
+  },
+});
+
+router.post(
+  "/upload",
+  auth,
+  upload.single("avatar"),
+  async (req, res) => {
+    try {
+      req.user.avatar = req.file.buffer;
+      await req.user.save();
+      res.send({ status: true, data: "file uplaoded successfully" });
+    } catch (err) {
+      logger.error(err);
+      res.status(400).send({ status: false, error: err.message });
+    }
+  },
+  (err, req, res, next) => {
+    res.send({ status: false, error: err.message });
+  }
+);
+
+router.get(
+  "/user/image/:id",
+  async (req, res) => {
+    const user = await User.findById(req.params.id);
+    try {
+      res.set("Content-Type", "image/jpg");
+      res.send(user.avatar);
+    } catch (err) {
+      logger.error(err);
+      res.status(400).send({ status: false, error: err.message });
+    }
+  },
+  (err, req, res, next) => {
+    res.send({ status: false, error: err.message });
+  }
+);
 
 router.post("/login", async (req, res) => {
   try {
@@ -12,6 +67,7 @@ router.post("/login", async (req, res) => {
     const token = await user.generateAuthToken();
     res.send({ status: true, data: { user, token } });
   } catch (err) {
+    logger.error(err);
     res.status(400).send({ status: false, error: err.message });
   }
 });
@@ -25,6 +81,7 @@ router.post("/logout", auth, async (req, res) => {
     await req.user.save();
     res.send({ status: true, message: "user logged out successfully" });
   } catch (err) {
+    logger.error(err);
     res.status(400).send(err.message);
   }
 });
@@ -40,6 +97,7 @@ router.post("/logout-all", auth, async (req, res) => {
       message: "user logged out from all devices successfully",
     });
   } catch (err) {
+    logger.error(err);
     res.status(400).send(err.message);
   }
 });
@@ -58,6 +116,7 @@ router.post("/sign-up", async (req, res) => {
       data: { user, token, message: "User created successfully" },
     });
   } catch (err) {
+    logger.error(err);
     if (err.code == 11000) {
       res.status(400).send({
         status: false,
@@ -87,7 +146,7 @@ router.get("/users", auth, async (req, res) => {
     const users = await User.find();
     res.send({ status: true, users });
   } catch (err) {
-    console.log(err);
+    logger.error(err);
     res.status(500).send(err.message);
   }
 });
@@ -101,6 +160,7 @@ router.get("/user/:id", auth, async (req, res) => {
     }
     res.send(user);
   } catch (err) {
+    logger.error(err);
     res.status(500).send(err.message);
   }
 });

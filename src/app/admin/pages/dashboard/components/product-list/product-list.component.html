@@ -44,6 +44,24 @@
           <i class="fa fa-trash delete_icon" aria-hidden="true" (click)="openModal(deleteProduct, i)"></i>
         </div>
       </div>
+      <div class="pagination" *ngIf="showPagination">
+        <div class="container">
+          <ul>
+            <li [class.disabled]="currentPage < 2" (click)="updatePage('prev')">
+              Previous Page
+            </li>
+            <ng-container *ngFor="let page of paginationArray; let i = index;">
+              <li [class.active]="page" *ngIf="i >= (currentPage - 3) && i < (currentPage + 2)"
+                (click)="updatePage(i+1)">
+                {{i + 1}}</li>
+            </ng-container>
+
+            <li [class.disabled]="currentPage === (paginationArray?.length)" (click)="updatePage('next')">
+              Next Page
+            </li>
+          </ul>
+        </div>
+      </div>
     </ng-container>
     <ng-container *ngIf="productList?.length === 0">
       <div class="col-sm-12 mar-tb-15 text-center">
