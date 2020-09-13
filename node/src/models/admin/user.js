@@ -49,6 +49,7 @@ const userSchema = new mongoose.Schema(
         }
       },
     },
+    address: [{}],
     tokens: [
       {
         token: {

@@ -122,3 +122,177 @@ error: undefined {"errors":{"password":{"name":"ValidatorError","message":"Path 
 error: undefined {"errors":{"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password"},"kind":"required","path":"password"},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email"},"kind":"required","path":"email"},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name"},"kind":"required","path":"l_name"},"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name"},"kind":"required","path":"f_name"}},"_message":"User validation failed","timestamp":"2020-09-02T17:32:27.509Z"}
 error: undefined {"errors":{"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password"},"kind":"required","path":"password"},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email"},"kind":"required","path":"email"},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name"},"kind":"required","path":"l_name"},"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name"},"kind":"required","path":"f_name"}},"_message":"User validation failed","timestamp":"2020-09-02T17:33:50.432Z"}
 error: undefined {"errors":{"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password"},"kind":"required","path":"password"},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email"},"kind":"required","path":"email"},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name"},"kind":"required","path":"l_name"},"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name"},"kind":"required","path":"f_name"}},"_message":"User validation failed","timestamp":"2020-09-02T17:39:14.115Z"}
+error: undefined {"errors":{"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password"},"kind":"required","path":"password"},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email"},"kind":"required","path":"email"},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name"},"kind":"required","path":"l_name"},"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name"},"kind":"required","path":"f_name"}},"_message":"User validation failed","timestamp":"2020-09-03T03:14:01.822Z"}
+error: undefined {"errors":{"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password"},"kind":"required","path":"password"},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email"},"kind":"required","path":"email"},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name"},"kind":"required","path":"l_name"},"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name"},"kind":"required","path":"f_name"}},"_message":"User validation failed","timestamp":"2020-09-03T03:16:28.750Z"}
+error: undefined {"errors":{"password":{"name":"ValidatorError","message":"Path `password` (`ght65`) is shorter than the minimum allowed length (8).","properties":{"message":"Path `password` (`ght65`) is shorter than the minimum allowed length (8).","type":"minlength","minlength":8,"path":"password","value":"ght65"},"kind":"minlength","path":"password","value":"ght65"}},"_message":"User validation failed","timestamp":"2020-09-03T04:10:17.537Z"}
+error: undefined {"errors":{"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name","value":null},"kind":"required","path":"f_name","value":null},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name","value":null},"kind":"required","path":"l_name","value":null},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email","value":null},"kind":"required","path":"email","value":null},"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password","value":null},"kind":"required","path":"password","value":null},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":null,"reason":{}},"kind":"user defined","path":"role","value":null,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-03T04:30:56.029Z"}
+error: undefined {"errors":{"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name","value":null},"kind":"required","path":"f_name","value":null},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name","value":null},"kind":"required","path":"l_name","value":null},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email","value":null},"kind":"required","path":"email","value":null},"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password","value":null},"kind":"required","path":"password","value":null},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":null,"reason":{}},"kind":"user defined","path":"role","value":null,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-03T04:30:56.035Z"}
+error: undefined {"errors":{"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name","value":null},"kind":"required","path":"f_name","value":null},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name","value":null},"kind":"required","path":"l_name","value":null},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email","value":null},"kind":"required","path":"email","value":null},"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password","value":null},"kind":"required","path":"password","value":null},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":null,"reason":{}},"kind":"user defined","path":"role","value":null,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-03T04:30:56.040Z"}
+error: undefined {"errors":{"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name","value":null},"kind":"required","path":"f_name","value":null},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name","value":null},"kind":"required","path":"l_name","value":null},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email","value":null},"kind":"required","path":"email","value":null},"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password","value":null},"kind":"required","path":"password","value":null},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":null,"reason":{}},"kind":"user defined","path":"role","value":null,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-03T04:30:56.049Z"}
+error: undefined {"errors":{"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name","value":null},"kind":"required","path":"f_name","value":null},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name","value":null},"kind":"required","path":"l_name","value":null},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email","value":null},"kind":"required","path":"email","value":null},"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password","value":null},"kind":"required","path":"password","value":null},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":null,"reason":{}},"kind":"user defined","path":"role","value":null,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-03T04:30:56.563Z"}
+error: undefined {"errors":{"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name","value":null},"kind":"required","path":"f_name","value":null},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name","value":null},"kind":"required","path":"l_name","value":null},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email","value":null},"kind":"required","path":"email","value":null},"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password","value":null},"kind":"required","path":"password","value":null},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":null,"reason":{}},"kind":"user defined","path":"role","value":null,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-03T04:30:56.565Z"}
+error: undefined {"errors":{"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name","value":null},"kind":"required","path":"f_name","value":null},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name","value":null},"kind":"required","path":"l_name","value":null},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email","value":null},"kind":"required","path":"email","value":null},"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password","value":null},"kind":"required","path":"password","value":null},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":null,"reason":{}},"kind":"user defined","path":"role","value":null,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-03T04:30:56.566Z"}
+error: undefined {"errors":{"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name","value":null},"kind":"required","path":"f_name","value":null},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name","value":null},"kind":"required","path":"l_name","value":null},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email","value":null},"kind":"required","path":"email","value":null},"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password","value":null},"kind":"required","path":"password","value":null},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":null,"reason":{}},"kind":"user defined","path":"role","value":null,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-03T04:30:56.568Z"}
+error: undefined {"errors":{"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name","value":null},"kind":"required","path":"f_name","value":null},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name","value":null},"kind":"required","path":"l_name","value":null},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email","value":null},"kind":"required","path":"email","value":null},"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password","value":null},"kind":"required","path":"password","value":null},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":null,"reason":{}},"kind":"user defined","path":"role","value":null,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-03T04:30:56.579Z"}
+error: undefined {"errors":{"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name","value":null},"kind":"required","path":"f_name","value":null},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name","value":null},"kind":"required","path":"l_name","value":null},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email","value":null},"kind":"required","path":"email","value":null},"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password","value":null},"kind":"required","path":"password","value":null},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":null,"reason":{}},"kind":"user defined","path":"role","value":null,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-03T04:30:56.585Z"}
+error: undefined {"errors":{"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name","value":null},"kind":"required","path":"f_name","value":null},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name","value":null},"kind":"required","path":"l_name","value":null},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email","value":null},"kind":"required","path":"email","value":null},"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password","value":null},"kind":"required","path":"password","value":null},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":null,"reason":{}},"kind":"user defined","path":"role","value":null,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-03T04:30:56.591Z"}
+error: undefined {"errors":{"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name","value":null},"kind":"required","path":"f_name","value":null},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name","value":null},"kind":"required","path":"l_name","value":null},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email","value":null},"kind":"required","path":"email","value":null},"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password","value":null},"kind":"required","path":"password","value":null},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":null,"reason":{}},"kind":"user defined","path":"role","value":null,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-03T04:30:58.938Z"}
+error: undefined {"errors":{"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name","value":null},"kind":"required","path":"f_name","value":null},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name","value":null},"kind":"required","path":"l_name","value":null},"email":{"name":"ValidatorError","message":"Path `email` is required.","properties":{"message":"Path `email` is required.","type":"required","path":"email","value":null},"kind":"required","path":"email","value":null},"password":{"name":"ValidatorError","message":"Path `password` is required.","properties":{"message":"Path `password` is required.","type":"required","path":"password","value":null},"kind":"required","path":"password","value":null},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":null,"reason":{}},"kind":"user defined","path":"role","value":null,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-03T04:31:00.578Z"}
+error: undefined {"timestamp":"2020-09-03T10:53:33.733Z"}
+error: undefined {"timestamp":"2020-09-03T11:01:19.828Z"}
+error: undefined {"timestamp":"2020-09-03T11:02:21.039Z"}
+error: undefined {"timestamp":"2020-09-03T11:06:12.670Z"}
+error: undefined {"timestamp":"2020-09-04T03:35:52.929Z"}
+error: undefined {"timestamp":"2020-09-04T03:35:52.931Z"}
+error: jwt malformed {"name":"JsonWebTokenError","timestamp":"2020-09-04T03:40:49.583Z"}
+error: jwt malformed {"name":"JsonWebTokenError","timestamp":"2020-09-04T03:40:49.585Z"}
+error: undefined {"timestamp":"2020-09-04T03:44:04.297Z"}
+error: undefined {"timestamp":"2020-09-04T03:44:04.298Z"}
+error: undefined {"timestamp":"2020-09-04T03:45:43.724Z"}
+error: undefined {"timestamp":"2020-09-04T03:47:08.702Z"}
+error: undefined {"timestamp":"2020-09-04T03:51:41.906Z"}
+error: undefined {"timestamp":"2020-09-04T05:07:07.786Z"}
+error: undefined {"timestamp":"2020-09-04T05:23:23.101Z"}
+error: undefined {"timestamp":"2020-09-04T05:23:43.671Z"}
+error: undefined {"timestamp":"2020-09-04T05:23:55.043Z"}
+error: undefined {"timestamp":"2020-09-04T05:24:39.744Z"}
+error: undefined {"timestamp":"2020-09-04T05:25:28.766Z"}
+error: undefined {"timestamp":"2020-09-04T05:29:04.190Z"}
+error: undefined {"timestamp":"2020-09-04T05:29:08.748Z"}
+error: undefined {"timestamp":"2020-09-04T05:29:16.141Z"}
+error: undefined {"timestamp":"2020-09-04T05:29:32.698Z"}
+error: undefined {"timestamp":"2020-09-04T05:29:37.714Z"}
+error: undefined {"timestamp":"2020-09-04T05:29:42.854Z"}
+error: undefined {"timestamp":"2020-09-04T05:29:46.334Z"}
+error: undefined {"timestamp":"2020-09-04T05:30:17.494Z"}
+error: undefined {"timestamp":"2020-09-04T05:30:19.422Z"}
+error: undefined {"timestamp":"2020-09-04T05:34:22.467Z"}
+error: undefined {"timestamp":"2020-09-04T05:34:34.320Z"}
+error: undefined {"timestamp":"2020-09-04T05:35:05.625Z"}
+error: undefined {"timestamp":"2020-09-04T05:35:47.977Z"}
+error: undefined {"timestamp":"2020-09-04T05:36:05.108Z"}
+error: undefined {"timestamp":"2020-09-04T05:37:15.722Z"}
+error: undefined {"timestamp":"2020-09-04T05:37:18.952Z"}
+error: undefined {"timestamp":"2020-09-04T05:37:34.614Z"}
+error: undefined {"timestamp":"2020-09-04T05:37:38.074Z"}
+error: undefined {"timestamp":"2020-09-04T05:37:43.273Z"}
+error: undefined {"timestamp":"2020-09-04T05:37:55.941Z"}
+error: undefined {"timestamp":"2020-09-04T05:38:14.165Z"}
+error: undefined {"timestamp":"2020-09-04T05:38:17.296Z"}
+error: undefined {"timestamp":"2020-09-04T05:38:36.741Z"}
+error: undefined {"timestamp":"2020-09-04T05:38:56.782Z"}
+error: undefined {"timestamp":"2020-09-04T05:39:10.933Z"}
+error: undefined {"timestamp":"2020-09-04T05:39:14.335Z"}
+error: undefined {"timestamp":"2020-09-04T05:39:16.222Z"}
+error: undefined {"timestamp":"2020-09-04T05:39:17.590Z"}
+error: undefined {"timestamp":"2020-09-04T05:39:22.121Z"}
+error: undefined {"timestamp":"2020-09-04T05:39:30.796Z"}
+error: undefined {"timestamp":"2020-09-04T05:39:32.107Z"}
+error: undefined {"timestamp":"2020-09-04T05:39:34.585Z"}
+error: undefined {"timestamp":"2020-09-04T05:39:36.918Z"}
+error: undefined {"timestamp":"2020-09-04T05:39:40.000Z"}
+error: undefined {"timestamp":"2020-09-04T05:40:02.831Z"}
+error: undefined {"timestamp":"2020-09-04T05:40:06.639Z"}
+error: undefined {"timestamp":"2020-09-04T05:40:09.283Z"}
+error: undefined {"timestamp":"2020-09-04T05:40:11.333Z"}
+error: undefined {"timestamp":"2020-09-04T05:40:14.703Z"}
+error: undefined {"timestamp":"2020-09-04T05:40:17.432Z"}
+error: undefined {"timestamp":"2020-09-04T05:40:22.211Z"}
+error: undefined {"timestamp":"2020-09-04T05:40:24.626Z"}
+error: undefined {"timestamp":"2020-09-04T05:40:34.507Z"}
+error: undefined {"timestamp":"2020-09-04T05:40:36.653Z"}
+error: undefined {"timestamp":"2020-09-04T05:40:39.932Z"}
+error: undefined {"timestamp":"2020-09-04T05:41:04.097Z"}
+error: undefined {"timestamp":"2020-09-04T05:41:08.881Z"}
+error: undefined {"timestamp":"2020-09-04T05:41:30.142Z"}
+error: undefined {"timestamp":"2020-09-04T05:41:33.259Z"}
+error: undefined {"timestamp":"2020-09-04T05:41:38.939Z"}
+error: undefined {"timestamp":"2020-09-04T05:41:49.719Z"}
+error: undefined {"timestamp":"2020-09-04T05:41:52.950Z"}
+error: undefined {"timestamp":"2020-09-04T05:41:54.756Z"}
+error: undefined {"timestamp":"2020-09-04T05:48:48.074Z"}
+error: undefined {"timestamp":"2020-09-04T05:50:06.983Z"}
+error: undefined {"timestamp":"2020-09-04T05:50:08.816Z"}
+error: undefined {"timestamp":"2020-09-04T05:50:16.944Z"}
+error: undefined {"timestamp":"2020-09-04T05:50:47.486Z"}
+error: undefined {"timestamp":"2020-09-04T05:55:33.003Z"}
+error: undefined {"timestamp":"2020-09-04T06:09:42.314Z"}
+error: undefined {"timestamp":"2020-09-04T06:09:51.538Z"}
+error: undefined {"timestamp":"2020-09-04T06:10:56.389Z"}
+error: undefined {"timestamp":"2020-09-04T06:11:04.721Z"}
+error: undefined {"timestamp":"2020-09-04T06:11:59.853Z"}
+error: undefined {"timestamp":"2020-09-04T06:12:33.435Z"}
+error: undefined {"timestamp":"2020-09-04T06:12:38.819Z"}
+error: undefined {"timestamp":"2020-09-04T06:12:44.437Z"}
+error: undefined {"timestamp":"2020-09-04T06:12:48.257Z"}
+error: undefined {"timestamp":"2020-09-04T06:12:52.616Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:15:22.713Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:22:06.424Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:22:20.695Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:22:33.408Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:31:11.646Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:31:21.579Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:31:36.369Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:32:44.414Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:32:53.638Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:33:09.157Z"}
+error: undefined {"timestamp":"2020-09-04T06:33:18.946Z"}
+error: undefined {"timestamp":"2020-09-04T06:33:26.413Z"}
+error: undefined {"timestamp":"2020-09-04T06:34:58.098Z"}
+error: undefined {"timestamp":"2020-09-04T06:35:08.322Z"}
+error: undefined {"timestamp":"2020-09-04T06:35:32.313Z"}
+error: undefined {"timestamp":"2020-09-04T06:35:48.131Z"}
+error: jwt malformed {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:36:03.566Z"}
+error: jwt malformed {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:36:13.073Z"}
+error: jwt malformed {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:37:06.911Z"}
+error: jwt malformed {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:38:45.983Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:41:19.065Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:41:42.643Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:45:33.044Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:45:40.191Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:45:52.064Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:46:07.573Z"}
+error: jwt malformed {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:47:39.097Z"}
+error: jwt malformed {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:47:48.857Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:48:52.627Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:49:01.149Z"}
+error: jwt malformed {"name":"JsonWebTokenError","timestamp":"2020-09-04T06:50:54.906Z"}
+error: undefined {"errors":{"email":{"name":"ValidatorError","message":"Enter correct email address","properties":{"message":"Enter correct email address","type":"user defined","path":"email","value":"p@p","reason":{}},"kind":"user defined","path":"email","value":"p@p","reason":{}},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":6,"reason":{}},"kind":"user defined","path":"role","value":6,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-04T10:23:56.685Z"}
+error: undefined {"errors":{"email":{"name":"ValidatorError","message":"Enter correct email address","properties":{"message":"Enter correct email address","type":"user defined","path":"email","value":"p@p","reason":{}},"kind":"user defined","path":"email","value":"p@p","reason":{}},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":6,"reason":{}},"kind":"user defined","path":"role","value":6,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-04T10:24:26.928Z"}
+error: undefined {"errors":{"email":{"name":"ValidatorError","message":"Enter correct email address","properties":{"message":"Enter correct email address","type":"user defined","path":"email","value":"piku34.co.in","reason":{}},"kind":"user defined","path":"email","value":"piku34.co.in","reason":{}}},"_message":"User validation failed","timestamp":"2020-09-04T10:36:09.438Z"}
+error: undefined {"timestamp":"2020-09-05T07:20:56.382Z"}
+error: undefined {"timestamp":"2020-09-05T07:22:22.328Z"}
+error: undefined {"timestamp":"2020-09-05T07:22:43.870Z"}
+error: undefined {"timestamp":"2020-09-05T07:23:22.597Z"}
+error: undefined {"timestamp":"2020-09-05T07:24:14.327Z"}
+error: undefined {"timestamp":"2020-09-05T07:24:55.662Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-05T07:25:31.515Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-05T07:25:58.948Z"}
+error: undefined {"timestamp":"2020-09-05T07:26:46.876Z"}
+error: undefined {"timestamp":"2020-09-06T04:28:31.129Z"}
+error: undefined {"timestamp":"2020-09-06T06:46:45.561Z"}
+error: undefined {"timestamp":"2020-09-06T09:39:35.927Z"}
+error: undefined {"timestamp":"2020-09-06T09:39:38.817Z"}
+error: undefined {"timestamp":"2020-09-06T09:39:41.186Z"}
+error: undefined {"version":96,"modifiedPaths":["tokens"],"timestamp":"2020-09-06T09:46:24.594Z"}
+error: undefined {"version":53,"modifiedPaths":["tokens"],"timestamp":"2020-09-06T09:47:19.598Z"}
+error: undefined {"timestamp":"2020-09-07T03:15:03.753Z"}
+error: undefined {"timestamp":"2020-09-07T03:15:08.223Z"}
+error: undefined {"timestamp":"2020-09-07T04:10:09.772Z"}
+error: undefined {"errors":{"email":{"name":"ValidatorError","message":"Enter correct email address","properties":{"message":"Enter correct email address","type":"user defined","path":"email","value":"pnishi000@","reason":{}},"kind":"user defined","path":"email","value":"pnishi000@","reason":{}}},"_message":"User validation failed","timestamp":"2020-09-07T07:48:42.699Z"}
+error: undefined {"errors":{"email":{"name":"ValidatorError","message":"Enter correct email address","properties":{"message":"Enter correct email address","type":"user defined","path":"email","value":"pnishi000@","reason":{}},"kind":"user defined","path":"email","value":"pnishi000@","reason":{}}},"_message":"User validation failed","timestamp":"2020-09-07T07:49:23.380Z"}
+error: undefined {"errors":{"email":{"name":"ValidatorError","message":"Enter correct email address","properties":{"message":"Enter correct email address","type":"user defined","path":"email","value":"pnishi2000@","reason":{}},"kind":"user defined","path":"email","value":"pnishi2000@","reason":{}}},"_message":"User validation failed","timestamp":"2020-09-07T07:52:31.134Z"}
+error: undefined {"errors":{"email":{"name":"ValidatorError","message":"Enter correct email address","properties":{"message":"Enter correct email address","type":"user defined","path":"email","value":"pnishi2000@","reason":{}},"kind":"user defined","path":"email","value":"pnishi2000@","reason":{}}},"_message":"User validation failed","timestamp":"2020-09-07T07:55:12.012Z"}
+error: undefined {"errors":{"email":{"name":"ValidatorError","message":"Enter correct email address","properties":{"message":"Enter correct email address","type":"user defined","path":"email","value":"pnishi2000@","reason":{}},"kind":"user defined","path":"email","value":"pnishi2000@","reason":{}}},"_message":"User validation failed","timestamp":"2020-09-07T07:57:34.426Z"}
+error: undefined {"driver":true,"name":"MongoError","index":0,"code":11000,"timestamp":"2020-09-07T08:01:16.770Z"}
+error: undefined {"errors":{"f_name":{"name":"ValidatorError","message":"Path `f_name` is required.","properties":{"message":"Path `f_name` is required.","type":"required","path":"f_name","value":null},"kind":"required","path":"f_name","value":null},"l_name":{"name":"ValidatorError","message":"Path `l_name` is required.","properties":{"message":"Path `l_name` is required.","type":"required","path":"l_name","value":null},"kind":"required","path":"l_name","value":null},"role":{"name":"ValidatorError","message":"Role can only be 0 or 1","properties":{"message":"Role can only be 0 or 1","type":"user defined","path":"role","value":null,"reason":{}},"kind":"user defined","path":"role","value":null,"reason":{}}},"_message":"User validation failed","timestamp":"2020-09-07T08:15:30.230Z"}
+error: undefined {"driver":true,"name":"MongoError","index":0,"code":11000,"timestamp":"2020-09-07T08:21:26.348Z"}
+error: undefined {"timestamp":"2020-09-08T08:49:22.621Z"}
+error: undefined {"timestamp":"2020-09-08T08:50:20.953Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-08T08:52:58.829Z"}
+error: invalid token {"name":"JsonWebTokenError","timestamp":"2020-09-09T07:47:39.011Z"}
+error: undefined {"timestamp":"2020-09-10T09:31:29.332Z"}
+error: undefined {"timestamp":"2020-09-12T03:49:26.547Z"}
+error: undefined {"timestamp":"2020-09-12T03:49:36.607Z"}
+error: undefined {"timestamp":"2020-09-12T03:49:47.773Z"}
+error: undefined {"timestamp":"2020-09-12T03:49:56.207Z"}

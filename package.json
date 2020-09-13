@@ -31,7 +31,7 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "ngx-bootstrap": "^5.6.1",
-    "ngx-toastr": "^13.0.0",
+    "ngx-toastr": "^8.8.0",
     "node-fetch": "^2.6.0",
     "redis": "^3.0.2",
     "rotating-file-stream": "^2.1.3",

@@ -1,8 +1,8 @@
 const express = require("express");
 const auth = require("./../../middlewares/auth");
 const User = require("./../../models/admin/user");
+const Cart = require("./../../models/admin/cart");
 const logger = require("./../../config/logger");
-const errorFromMiddleware = require("./../../middlewares/error");
 const router = new express.Router();
 const multer = require("multer");
 const upload = multer({
@@ -65,7 +65,18 @@ router.post("/login", async (req, res) => {
       req.body.password
     );
     const token = await user.generateAuthToken();
-    res.send({ status: true, data: { user, token } });
+    const cart = (await Cart.findOne({ createdBy: user._id })) || {
+      items: [],
+    };
+    const obj = {};
+    obj.user = JSON.parse(JSON.stringify(user));
+    obj.user.cart = JSON.parse(JSON.stringify(cart));
+
+    obj.token = token;
+    res.send({
+      status: true,
+      data: obj,
+    });
   } catch (err) {
     logger.error(err);
     res.status(400).send({ status: false, error: err.message });
@@ -113,7 +124,12 @@ router.post("/sign-up", async (req, res) => {
     const token = await user.generateAuthToken();
     res.send({
       status: true,
-      data: { user, token, message: "User created successfully" },
+      data: {
+        user,
+        token,
+        cart: { items: [] },
+        message: "User created successfully",
+      },
     });
   } catch (err) {
     logger.error(err);
@@ -159,6 +175,21 @@ router.get("/user/:id", auth, async (req, res) => {
       res.status(404).send({ status: false, message: "user does't exist" });
     }
     res.send(user);
+  } catch (err) {
+    logger.error(err);
+    res.status(500).send(err.message);
+  }
+});
+
+router.post("/address/add", auth, async (req, res) => {
+  try {
+    req.user.address.push(req.body.address);
+    const user = await req.user.save();
+    if (!user) {
+      throw new Error("user does't exist");
+    }
+
+    res.send({ status: true, user });
   } catch (err) {
     logger.error(err);
     res.status(500).send(err.message);

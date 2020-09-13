@@ -7,7 +7,7 @@ const logger = require("./../../config/logger");
 
 const router = express.Router();
 
-router.get("/get-product-list", auth, async (req, res) => {
+router.get("/get-product-list", async (req, res) => {
   try {
     const home = await Home.find().lean();
 
@@ -87,7 +87,7 @@ router.get("/get-product-list", auth, async (req, res) => {
   }
 });
 
-router.post("/update-home-data", auth, async (req, res) => {
+router.post("/update-home-data", async (req, res) => {
   try {
     if (
       !req.body.categoryList ||

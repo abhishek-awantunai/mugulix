@@ -15,6 +15,7 @@ const homeRoutes = require("./routers/moglix/home.router");
 const adminRoutes = require("./routers/admin/user.router");
 const productRoutes = require("./routers/admin/product.router");
 const categoryRoutes = require("./routers/admin/category.router");
+const cartRoutes = require('./routers/admin/cart.router');
 
 const PORT = process.env.PORT || 4242;
 const APP_PORT = process.env.APP_PORT || 8000;
@@ -29,12 +30,18 @@ connecToDB();
 app.use("/api/admin", adminRoutes);
 app.use("/api/admin/category", categoryRoutes);
 app.use("/api/admin/product", productRoutes);
+app.use("/api/admin/cart", cartRoutes);
 
 // Moglix Routes
 app.use("/api/moglix", adminRoutes);
 app.use("/api/moglix/category", categoryRoutes);
 app.use("/api/moglix/product", productRoutes);
 app.use("/api/moglix/home", homeRoutes);
+app.use("/api/moglix/cart", cartRoutes);
+
+app.use((req, res, next) => {
+  res.status(404).send('<h1>Page Not Found</h1>');
+});
 
 app.listen(PORT, () => {
   console.log(
